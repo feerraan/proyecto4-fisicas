@@ -6,7 +6,7 @@ public class RotateCamera : MonoBehaviour
 {
 
     private float horitzontalInput;
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float rotationspeed = 10f;
 
 
     // Start is called before the first frame update
@@ -19,6 +19,6 @@ public class RotateCamera : MonoBehaviour
     void Update()
     {
         horitzontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.up * horitzontalInput * Time.deltaTime * speed);
+        transform.Rotate(Vector3.up, horitzontalInput * Time.deltaTime * rotationspeed);
     }
 }

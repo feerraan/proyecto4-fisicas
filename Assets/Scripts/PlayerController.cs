@@ -24,19 +24,17 @@ public class PlayerController : MonoBehaviour
     {
 
         forwardInput = Input.GetAxis("Vertical");
+        playerRidigbody.AddForce(focalPointGameObject.transform.forward * speed * forwardInput);
+       // if (Mathf.Abs(forwardInput) <0.01f)
+       // {
+       //    playerRidigbody.velocity = Vector3.zero;
+       // }
+       // else
+       // {
+       //    playerRidigbody.AddForce(focalPointGameObject.transform.forward * speed * forwardInput);
+       // }
 
-        if (Mathf.Abs(forwardInput) <0.01f)
-        {
-        
-            playerRidigbody.velocity = Vector3.zero;
 
-        }
-        else
-        {
-            playerRidigbody.AddForce(focalPointGameObject.transform.forward * speed * forwardInput);
-        }
-        
-       
 
     }
 
